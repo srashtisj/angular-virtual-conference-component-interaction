@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-component-a',
   templateUrl: './component-a.component.html',
-  styleUrls: ['./component-a.component.css']
+  styleUrls: ['./component-a.component.css'],
 })
 export class ComponentAComponent implements OnInit {
+  @Input('parentData') public name;
 
-  constructor() { }
+  @Output() public childEvent = new EventEmitter();
+  public counter: Number = 0;
 
-  ngOnInit(): void {
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  sendData() {
+    this.childEvent.emit(++this.counter);
   }
-
 }

@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent implements OnInit {
-
+  public name: string;
+  public message: string;
   constructor() { }
 
   ngOnInit(): void {
+    this.name = 'Angular Virtual Conference';
   }
 
 }
